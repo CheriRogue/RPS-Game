@@ -8,4 +8,5 @@ function computerPlay() {
   const randomResult = Math.floor(Math.random() * 3);
   return choices[randomResult];
 }
-computerPlay();
+
+console.log(computerPlay());
