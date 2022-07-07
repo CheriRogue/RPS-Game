@@ -1,7 +1,12 @@
-"strict mode";
+"use strict";
 
-// let playerScore = 0;
-// let computerScore = 0;
+// // let playerScore = 0;
+// // let computerScore = 0;
+
+const choices = ["Rock", "Paper", "Scissors"];
+
+let playerSelection = "Rock";
+const computerSelection = computerPlay();
 
 function computerPlay() {
   const choices = ["Rock", "Paper", "Scissors"];
@@ -9,9 +14,9 @@ function computerPlay() {
   return choices[randomResult];
 }
 
-// console.log(computerPlay());
+console.log(computerPlay());
 
-function gameRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) return "You Tie!";
   else if (playerSelection === "Paper" && computerSelection === "Rock")
     return "You Win! Paper beats Rock";
@@ -24,11 +29,12 @@ function gameRound(playerSelection, computerSelection) {
   }
 }
 
-let playerSelection = prompt("Choose Rock, Paper or Scissors to begin!");
-playerSelection = playerSelection.toLowerCase();
-const computerSelection = computerPlay();
-console.log(gameRound(playerSelection, computerSelection));
-
 function game() {
-  for (let i = 0; i < 5; i++) {}
+  return playRound(playerSelection, computerSelection);
 }
+
+console.log(game());
+
+// // // function game() {
+// // //   for (let i = 0; i < 5; i++) {}
+// // // }
