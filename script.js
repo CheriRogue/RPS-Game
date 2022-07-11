@@ -16,7 +16,6 @@ function computerPlay() {
 }
 
 function playRound(playerSelection) {
-  const computerSelection = computerPlay();
   console.log(`user choice => ${playerSelection}`);
   console.log(`computer choice => ${computerSelection}`);
   switch (playerSelection + computerSelection) {
@@ -37,12 +36,19 @@ function playRound(playerSelection) {
   }
 }
 
-function game() {
-  for (let i = 0; i < 5; i++) return playRound(playerSelection);
+function gameOver() {
+  if (playerScore > computerScore) {
+    return "You win the game!";
+  } else return "You lost the game!";
 }
 
-console.log(game());
+function game() {
+  for (let i = 0; i < 5; i++)
+    // {
+    //   if(playerScore < 5 && computerScore <5)
+    //   } else { gameOver()} Need to fix!!!
 
-// // // function game() {
-// // //   for (let i = 0; i < 5; i++) {}
-// // // }
+    console.log(playRound(playerSelection, computerSelection));
+}
+
+game();
