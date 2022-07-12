@@ -36,19 +36,23 @@ function playRound(playerSelection) {
   }
 }
 
-function gameOver() {
-  if (playerScore > computerScore) {
-    return "You win the game!";
-  } else return "You lost the game!";
-}
-
 function game() {
-  for (let i = 0; i < 5; i++)
-    // {
-    //   if(playerScore < 5 && computerScore <5)
-    //   } else { gameOver()} Need to fix!!!
-
+  for (let i = 0; i < 5; i++) {
+    let playerSelection = prompt("Rock, Paper, Scissors?");
+    const computerSelection = computerPlay();
+    console.log(playerScore++);
+    console.log(computerScore++);
     console.log(playRound(playerSelection, computerSelection));
+  }
 }
 
 game();
+
+function gameOver() {
+  if (playerScore === 5 && computerScore < 5) {
+    return "You win the game!";
+  } else if (playerScore === 5 && computerScore === 5) {
+    return "You tied! Try Again!";
+  } else return "You lost the game!";
+}
+console.log(gameOver());
